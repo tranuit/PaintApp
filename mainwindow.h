@@ -46,6 +46,7 @@ protected:
         painter.setBrush(Qt::yellow);  // màu nền tam giác
         painter.setPen(Qt::black);     // viền
         painter.drawPolygon(triangle);
+
     }
 };
 
