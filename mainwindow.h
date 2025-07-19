@@ -31,6 +31,24 @@ protected:
     }
 };
 
+class TriangleWidget : public QWidget {
+protected:
+    void paintEvent(QPaintEvent *event) override {
+        QPainter painter(this);
+
+        // Tạo tam giác bằng QPolygon
+        QPolygon triangle;
+        triangle << QPoint(width() / 2, 10)              // đỉnh trên
+                 << QPoint(10, height() - 10)            // đáy trái
+                 << QPoint(width() - 10, height() - 10); // đáy phải
+
+        // Vẽ tam giác
+        painter.setBrush(Qt::yellow);  // màu nền tam giác
+        painter.setPen(Qt::black);     // viền
+        painter.drawPolygon(triangle);
+    }
+};
+
 class MainWindow : public QMainWindow
 
 {
@@ -44,6 +62,7 @@ private:
     Ui::MainWindow *ui;
     RectangleWidget *rec;
     CircleWidget *circle;
+    TriangleWidget *triangle;
 
 };
 

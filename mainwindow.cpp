@@ -13,6 +13,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     circle = new CircleWidget();
     ui->centralwidget->layout()->addWidget(circle);
+
+    triangle = new TriangleWidget();
+    ui->centralwidget->layout()->addWidget(triangle);
 }
 
 MainWindow::~MainWindow()
